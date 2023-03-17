@@ -2,13 +2,13 @@ import 'package:realm/realm.dart';
 import 'package:realm_chat/service/realm_service/realm_service.dart';
 
 class AuthService {
-  static User? user;
+  static User? currentUser;
   static Future<bool> login({
     required String email,
     required String password,
   }) async {
     try {
-      user = await RealmService.app.logIn(
+      currentUser = await RealmService.app.logIn(
         Credentials.emailPassword(email, password),
       );
       return true;
@@ -19,13 +19,13 @@ class AuthService {
   }
 
   static Future logout() async {
-    await RealmService.app.removeUser(AuthService.user!);
+    await RealmService.app.removeUser(AuthService.currentUser!);
   }
 
   static bool get isLoggedIn {
     bool isLoggedIn = RealmService.app.currentUser != null;
     if (isLoggedIn) {
-      AuthService.user = RealmService.app.currentUser;
+      AuthService.currentUser = RealmService.app.currentUser;
     }
     return isLoggedIn;
   }

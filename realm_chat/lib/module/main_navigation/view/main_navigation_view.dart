@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:realm_chat/core.dart';
-import '../controller/main_navigation_controller.dart';
 
 class MainNavigationView extends StatefulWidget {
   const MainNavigationView({Key? key}) : super(key: key);

@@ -17,8 +17,8 @@ class LoginController extends State<LoginView> implements MvcController {
   @override
   Widget build(BuildContext context) => widget.build(context, this);
 
-  String email = "";
-  String password = "";
+  String email = "demo@app.com";
+  String password = "123456";
   doLogin() async {
     bool isLoggedIn = await AuthService.login(
       email: email,

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:realm_chat/state_util.dart';
-import '../view/login_view.dart';
+import 'package:realm_chat/core.dart';
 
 class LoginController extends State<LoginView> implements MvcController {
   static late LoginController instance;
@@ -17,4 +16,20 @@ class LoginController extends State<LoginView> implements MvcController {
 
   @override
   Widget build(BuildContext context) => widget.build(context, this);
+
+  String email = "";
+  String password = "";
+  doLogin() async {
+    bool isLoggedIn = await AuthService.login(
+      email: email,
+      password: password,
+    );
+
+    if (!isLoggedIn) {
+      showInfoDialog("Wrong email or password!");
+      return;
+    }
+
+    Get.offAll(const MainNavigationView());
+  }
 }

@@ -14,25 +14,37 @@ class LoginView extends StatefulWidget {
       ),
       body: SingleChildScrollView(
         child: Container(
-          padding: const EdgeInsets.all(10.0),
+          padding: const EdgeInsets.all(20.0),
           child: Column(
             children: [
+              QTextField(
+                label: "Email",
+                hint: "Your email",
+                validator: Validator.email,
+                suffixIcon: Icons.email,
+                value: controller.email,
+                onChanged: (value) {
+                  controller.email = value;
+                },
+              ),
+              QTextField(
+                label: "Password",
+                hint: "Your password",
+                obscure: true,
+                validator: Validator.required,
+                suffixIcon: Icons.password,
+                value: controller.password,
+                onChanged: (value) {
+                  controller.password = value;
+                },
+              ),
               ElevatedButton.icon(
                 icon: const Icon(Icons.login),
                 label: const Text("Login"),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.blueGrey,
                 ),
-                onPressed: () async {
-                  bool isLoginSuccess = await AuthService.login(
-                    email: "denyocr.world@gmail.com",
-                    password: "!Password123",
-                  );
-
-                  if (isLoginSuccess) {
-                    Get.to(const MainNavigationView());
-                  }
-                },
+                onPressed: () => controller.doLogin(),
               ),
             ],
           ),

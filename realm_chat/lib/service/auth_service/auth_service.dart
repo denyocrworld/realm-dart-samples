@@ -17,4 +17,16 @@ class AuthService {
       return false;
     }
   }
+
+  static Future logout() async {
+    await RealmService.app.removeUser(AuthService.user!);
+  }
+
+  static bool get isLoggedIn {
+    bool isLoggedIn = RealmService.app.currentUser != null;
+    if (isLoggedIn) {
+      AuthService.user = RealmService.app.currentUser;
+    }
+    return isLoggedIn;
+  }
 }

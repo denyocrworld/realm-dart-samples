@@ -1,8 +1,5 @@
-import 'package:realm_chat/state_util.dart';
+import 'package:realm_chat/core.dart';
 import 'package:flutter/material.dart';
-import 'package:realm_chat/service/realm_service/realm_service.dart';
-
-import 'module/login/view/login_view.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -17,8 +14,16 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       navigatorKey: Get.navigatorKey,
-      theme: ThemeData.dark(),
-      home: const LoginView(),
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData.dark().copyWith(
+        bottomNavigationBarTheme: BottomNavigationBarThemeData(
+          selectedItemColor: Colors.white,
+          unselectedItemColor: Colors.grey[800],
+        ),
+      ),
+      home: AuthService.isLoggedIn
+          ? const MainNavigationView()
+          : const LoginView(),
     );
   }
 }

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:realm_chat/state_util.dart';
-import '../view/profile_view.dart';
+import 'package:realm_chat/core.dart';
 
 class ProfileController extends State<ProfileView> implements MvcController {
   static late ProfileController instance;
@@ -17,4 +16,9 @@ class ProfileController extends State<ProfileView> implements MvcController {
 
   @override
   Widget build(BuildContext context) => widget.build(context, this);
+
+  doLogout() async {
+    await AuthService.logout();
+    Get.offAll(const LoginView());
+  }
 }

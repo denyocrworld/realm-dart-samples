@@ -18,6 +18,23 @@ class AuthService {
     }
   }
 
+  static Future<bool> register({
+    required String email,
+    required String password,
+  }) async {
+    try {
+      // currentUser = await RealmService.app.logIn(
+      //   Credentials.emailPassword(email, password),
+      // );
+      final emailPwCredentials = Credentials.emailPassword(email, password);
+      await RealmService.app.logIn(emailPwCredentials);
+      return true;
+    } on Exception catch (err) {
+      print("$err");
+      return false;
+    }
+  }
+
   static Future logout() async {
     await RealmService.app.removeUser(AuthService.currentUser!);
   }

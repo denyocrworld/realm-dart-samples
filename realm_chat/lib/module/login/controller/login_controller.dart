@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:realm/realm.dart';
 import 'package:realm_chat/core.dart';
 
 class LoginController extends State<LoginView> implements MvcController {
@@ -31,5 +32,21 @@ class LoginController extends State<LoginView> implements MvcController {
     }
 
     Get.offAll(const MainNavigationView());
+  }
+
+  doSignUp() async {
+    try {
+      EmailPasswordAuthProvider authProvider =
+          EmailPasswordAuthProvider(RealmService.app);
+      await authProvider.registerUser(email, password);
+      await AuthService.login(
+        email: email,
+        password: password,
+      );
+      Get.offAll(const MainNavigationView());
+    } on Exception {
+      showInfoDialog("Wrong email or password!");
+      return;
+    }
   }
 }

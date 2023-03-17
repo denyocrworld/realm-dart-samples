@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:realm_chat/core.dart';
-import '../controller/profile_controller.dart';
 
 class ProfileView extends StatefulWidget {
   const ProfileView({Key? key}) : super(key: key);
@@ -25,7 +24,25 @@ class ProfileView extends StatefulWidget {
         child: Container(
           padding: const EdgeInsets.all(10.0),
           child: Column(
-            children: const [],
+            children: [
+              ListTile(
+                leading: CircleAvatar(
+                  backgroundImage: NetworkImage(
+                    AuthService.currentUser!.profile.pictureUrl ??
+                        "https://i.ibb.co/S32HNjD/no-image.jpg",
+                  ),
+                ),
+                title: Text(AuthService.currentUser!.profile.name ?? "-"),
+                subtitle: Text("${AuthService.currentUser!.profile.email}"),
+                trailing: InkWell(
+                  onTap: () {},
+                  child: const Icon(
+                    Icons.edit,
+                    size: 12.0,
+                  ),
+                ),
+              ),
+            ],
           ),
         ),
       ),

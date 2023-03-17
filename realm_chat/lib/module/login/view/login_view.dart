@@ -38,6 +38,7 @@ class LoginView extends StatefulWidget {
                   controller.password = value;
                 },
               ),
+              const Divider(),
               ElevatedButton.icon(
                 icon: const Icon(Icons.login),
                 label: const Text("Login"),
@@ -45,6 +46,17 @@ class LoginView extends StatefulWidget {
                   backgroundColor: Colors.blueGrey,
                 ),
                 onPressed: () => controller.doLogin(),
+              ),
+              const SizedBox(
+                height: 20.0,
+              ),
+              ElevatedButton.icon(
+                icon: const Icon(Icons.login),
+                label: const Text("Signup"),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.blueGrey,
+                ),
+                onPressed: () => controller.doSignUp(),
               ),
             ],
           ),

@@ -39,6 +39,18 @@ dependencies:
   google_fonts: ^4.0.3
   material_design_icons_flutter: ^6.0.7096
   flutter_animate: ^4.1.0
+  realm: ^1.0.2
+  image_picker: ^0.8.7
+  dio: ^5.0.2
+  file_picker: ^5.2.6
+  uuid: ^3.0.7
+  flutter_rating_bar: ^4.0.1
+  carousel_slider: ^4.2.1
+  url_launcher: ^6.1.10
+  geolocator: ^9.0.2
+  latlong2: ^0.8.1
+  flutter_map: ^3.1.0
+  permission_handler: ^10.2.0
 
 dev_dependencies:
   flutter_test:

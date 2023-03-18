@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:realm_chat/state_util.dart';
-import '../view/user_list_view.dart';
+import '../view/customer_vendor_review_view.dart';
 
-class UserListController extends State<UserListView> implements MvcController {
-  static late UserListController instance;
-  late UserListView view;
+class CustomerVendorReviewController extends State<CustomerVendorReviewView> implements MvcController {
+  static late CustomerVendorReviewController instance;
+  late CustomerVendorReviewView view;
 
   @override
   void initState() {

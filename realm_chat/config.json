@@ -4,7 +4,17 @@
         "login",
         "main_navigation",
         "dashboard",
-        "user_list",
-        "profile"
+        "vendor/vendor_main_navigation",
+        "vendor/vendor_dashboard",
+        "vendor/vendor_profile",
+        "customer/customer_main_navigation",
+        "customer/customer_dashboard",
+        "customer/customer_profile",
+        "customer/customer_vendor_detail",
+        "customer/customer_vendor_about",
+        "customer/customer_vendor_service",
+        "customer/customer_vendor_gallery",
+        "customer/customer_vendor_review",
+        "customer/customer_order_detail"
     ]
 }

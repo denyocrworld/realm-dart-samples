@@ -2,13 +2,18 @@ import 'package:realm/realm.dart';
 import 'package:realm_chat/service/realm_service/realm_service.dart';
 
 class AuthService {
-  static User? currentUser;
+  static User? _currentUser;
+  static User? get currentUser {
+    _currentUser ??= RealmService.app.currentUser;
+    return _currentUser;
+  }
+
   static Future<bool> login({
     required String email,
     required String password,
   }) async {
     try {
-      currentUser = await RealmService.app.logIn(
+      _currentUser = await RealmService.app.logIn(
         Credentials.emailPassword(email, password),
       );
       return true;
@@ -23,11 +28,9 @@ class AuthService {
     required String password,
   }) async {
     try {
-      // currentUser = await RealmService.app.logIn(
-      //   Credentials.emailPassword(email, password),
-      // );
-      final emailPwCredentials = Credentials.emailPassword(email, password);
-      await RealmService.app.logIn(emailPwCredentials);
+      EmailPasswordAuthProvider authProvider =
+          EmailPasswordAuthProvider(RealmService.app);
+      await authProvider.registerUser(email, password);
       return true;
     } on Exception catch (err) {
       print("$err");
@@ -36,13 +39,13 @@ class AuthService {
   }
 
   static Future logout() async {
-    await RealmService.app.removeUser(AuthService.currentUser!);
+    await RealmService.app.removeUser(AuthService._currentUser!);
   }
 
   static bool get isLoggedIn {
     bool isLoggedIn = RealmService.app.currentUser != null;
     if (isLoggedIn) {
-      AuthService.currentUser = RealmService.app.currentUser;
+      AuthService._currentUser = RealmService.app.currentUser;
     }
     return isLoggedIn;
   }

@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:realm_chat/core.dart';
-import '../controller/user_list_controller.dart';
+import '../controller/vendor_dashboard_controller.dart';
 
-class UserListView extends StatefulWidget {
-  const UserListView({Key? key}) : super(key: key);
+class VendorDashboardView extends StatefulWidget {
+  const VendorDashboardView({Key? key}) : super(key: key);
 
-  Widget build(context, UserListController controller) {
+  Widget build(context, VendorDashboardController controller) {
     controller.view = this;
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("UserList"),
+        title: const Text("VendorDashboard"),
         actions: const [],
       ),
       body: SingleChildScrollView(
@@ -25,5 +25,5 @@ class UserListView extends StatefulWidget {
   }
 
   @override
-  State<UserListView> createState() => UserListController();
+  State<VendorDashboardView> createState() => VendorDashboardController();
 }

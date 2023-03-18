@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:realm_chat/core.dart';
+import '../controller/main_navigation_controller.dart';
 
 class MainNavigationView extends StatefulWidget {
   const MainNavigationView({Key? key}) : super(key: key);
@@ -7,52 +8,17 @@ class MainNavigationView extends StatefulWidget {
   Widget build(context, MainNavigationController controller) {
     controller.view = this;
 
-    return DefaultTabController(
-      length: 4,
-      initialIndex: controller.selectedIndex,
-      child: Scaffold(
-        body: IndexedStack(
-          index: controller.selectedIndex,
-          children: [
-            const DashboardView(),
-            Container(
-              color: Colors.green,
-            ),
-            Container(
-              color: Colors.blue,
-            ),
-            const ProfileView(),
-          ],
-        ),
-        bottomNavigationBar: BottomNavigationBar(
-          currentIndex: controller.selectedIndex,
-          onTap: (newIndex) => controller.updateIndex(newIndex),
-          items: const [
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.dashboard,
-              ),
-              label: "Dashboard",
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.list,
-              ),
-              label: "Order",
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.favorite,
-              ),
-              label: "Favorite",
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.person,
-              ),
-              label: "User",
-            ),
-          ],
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("MainNavigation"),
+        actions: const [],
+      ),
+      body: SingleChildScrollView(
+        child: Container(
+          padding: const EdgeInsets.all(10.0),
+          child: Column(
+            children: const [],
+          ),
         ),
       ),
     );

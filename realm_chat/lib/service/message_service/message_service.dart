@@ -1,6 +1,5 @@
 import 'package:realm/realm.dart';
 import 'package:realm_chat/core.dart';
-import '../../model/message/message.dart';
 
 class MessageService {
   static late Realm realm;

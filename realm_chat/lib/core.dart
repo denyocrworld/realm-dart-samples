@@ -3,6 +3,27 @@ We believe, the class name must be unique.
 If there is a conflicting class name in this file,
 it means you have to rename it to something more unique.
 */
+export 'package:realm_chat/model/message/message.dart';
+export 'package:realm_chat/model/post/post.dart';
+export 'package:realm_chat/model/vendor/vendor.dart';
+export 'package:realm_chat/module/customer/customer_dashboard/controller/customer_dashboard_controller.dart';
+export 'package:realm_chat/module/customer/customer_dashboard/view/customer_dashboard_view.dart';
+export 'package:realm_chat/module/customer/customer_main_navigation/controller/customer_main_navigation_controller.dart';
+export 'package:realm_chat/module/customer/customer_main_navigation/view/customer_main_navigation_view.dart';
+export 'package:realm_chat/module/customer/customer_order_detail/controller/customer_order_detail_controller.dart';
+export 'package:realm_chat/module/customer/customer_order_detail/view/customer_order_detail_view.dart';
+export 'package:realm_chat/module/customer/customer_profile/controller/customer_profile_controller.dart';
+export 'package:realm_chat/module/customer/customer_profile/view/customer_profile_view.dart';
+export 'package:realm_chat/module/customer/customer_vendor_about/controller/customer_vendor_about_controller.dart';
+export 'package:realm_chat/module/customer/customer_vendor_about/view/customer_vendor_about_view.dart';
+export 'package:realm_chat/module/customer/customer_vendor_detail/controller/customer_vendor_detail_controller.dart';
+export 'package:realm_chat/module/customer/customer_vendor_detail/view/customer_vendor_detail_view.dart';
+export 'package:realm_chat/module/customer/customer_vendor_gallery/controller/customer_vendor_gallery_controller.dart';
+export 'package:realm_chat/module/customer/customer_vendor_gallery/view/customer_vendor_gallery_view.dart';
+export 'package:realm_chat/module/customer/customer_vendor_review/controller/customer_vendor_review_controller.dart';
+export 'package:realm_chat/module/customer/customer_vendor_review/view/customer_vendor_review_view.dart';
+export 'package:realm_chat/module/customer/customer_vendor_service/controller/customer_vendor_service_controller.dart';
+export 'package:realm_chat/module/customer/customer_vendor_service/view/customer_vendor_service_view.dart';
 export 'package:realm_chat/module/dashboard/controller/dashboard_controller.dart';
 export 'package:realm_chat/module/dashboard/view/dashboard_view.dart';
 export 'package:realm_chat/module/login/controller/login_controller.dart';
@@ -11,10 +32,17 @@ export 'package:realm_chat/module/main_navigation/controller/main_navigation_con
 export 'package:realm_chat/module/main_navigation/view/main_navigation_view.dart';
 export 'package:realm_chat/module/profile/controller/profile_controller.dart';
 export 'package:realm_chat/module/profile/view/profile_view.dart';
-export 'package:realm_chat/module/user_list/controller/user_list_controller.dart';
-export 'package:realm_chat/module/user_list/view/user_list_view.dart';
+export 'package:realm_chat/module/vendor/vendor_dashboard/controller/vendor_dashboard_controller.dart';
+export 'package:realm_chat/module/vendor/vendor_dashboard/view/vendor_dashboard_view.dart';
+export 'package:realm_chat/module/vendor/vendor_main_navigation/controller/vendor_main_navigation_controller.dart';
+export 'package:realm_chat/module/vendor/vendor_main_navigation/view/vendor_main_navigation_view.dart';
+export 'package:realm_chat/module/vendor/vendor_profile/controller/vendor_profile_controller.dart';
+export 'package:realm_chat/module/vendor/vendor_profile/view/vendor_profile_view.dart';
 export 'package:realm_chat/service/auth_service/auth_service.dart';
+export 'package:realm_chat/service/message_service/message_service.dart';
+export 'package:realm_chat/service/post_service/post_service.dart';
 export 'package:realm_chat/service/realm_service/realm_service.dart';
+export 'package:realm_chat/shared/theme/theme.dart';
 export 'package:realm_chat/shared/util/dialog/confirmation_dialog.dart';
 export 'package:realm_chat/shared/util/dialog/show_custom_dialog.dart';
 export 'package:realm_chat/shared/util/dialog/show_info_dialog.dart';
@@ -39,5 +67,6 @@ export 'package:realm_chat/shared/widget/form/rating/rating_field.dart';
 export 'package:realm_chat/shared/widget/form/switch/switch.dart';
 export 'package:realm_chat/shared/widget/form/textfield/text_field.dart';
 export 'package:realm_chat/shared/widget/form/time_picker/timepicker.dart';
+export 'package:realm_chat/shared/widget/navigation/indexed_stack_navigation/indexed_stack_navigation.dart';
 export 'core_package.dart';
 export 'state_util.dart';
